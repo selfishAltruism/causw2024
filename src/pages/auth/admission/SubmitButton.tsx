@@ -20,7 +20,8 @@ export const SubmitButton: React.FC<{ email?: string }> = observer(({ email }) =
   const { replace } = useHistory();
   const { isLoading, isDisabled, createAdmission, setSubmitDisabled } =
     usePageUiStore<PageUiStore.Admission>();
-  const { handleSubmit, watch } = useFormContext();
+  const { handleSubmit, watch } = useFormContext<FormBody>();
+
   const onSubmit = useCallback(
     (email?: string) => async (body: FormBody) => {
       if (!email) return;
@@ -44,7 +45,7 @@ export const SubmitButton: React.FC<{ email?: string }> = observer(({ email }) =
 
   useEffect(() => {
     const subscription = watch(({ description, attachImage }) =>
-      setSubmitDisabled(!description && !attachImage.length),
+      setSubmitDisabled(!description && !attachImage?.length),
     );
     return () => subscription.unsubscribe();
   }, [watch]);

@@ -4,7 +4,7 @@ import { Control, Controller, FieldValues, Path, UseControllerProps } from 'reac
 
 import { ClearButton } from '..';
 
-interface Props<TFieldValues> {
+interface Props<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
   control: Control<TFieldValues>;
   id: string;

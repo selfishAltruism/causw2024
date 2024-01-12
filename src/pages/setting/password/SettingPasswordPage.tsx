@@ -31,7 +31,7 @@ const SettingPasswordPage: React.FC = observer(() => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm<User.PasswordUpdateRequestDto & { updatedPasswordConfirm: string }>();
   const updatedPassword = watch('updatedPassword');
   const onSubmit = async (body: User.PasswordUpdateRequestDto) => {
     const { success, message } = (await update(body)) as unknown as StoreAPI;
@@ -80,7 +80,9 @@ const SettingPasswordPage: React.FC = observer(() => {
             }}
           />
           {errors.updatedPassword ? (
-            <ErrorMessage dangerouslySetInnerHTML={{ __html: errors.updatedPassword?.message }} />
+            <ErrorMessage
+              dangerouslySetInnerHTML={{ __html: errors.updatedPassword?.message as string }}
+            />
           ) : null}
 
           <PasswordInput
