@@ -1,8 +1,9 @@
-import 'react-quill/dist/quill.snow.css';
 import { observer } from 'mobx-react-lite';
 import { useMemo, useCallback, useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import ReactQuill, { Quill } from 'react-quill';
+import ReactQuill from 'react-quill';
+//import ReactQuill, { Quill } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { useRouteMatch } from 'react-router-dom';
 
 import { EditorWrapper } from '../styled';
@@ -10,9 +11,9 @@ import { EditorWrapper } from '../styled';
 import { PAGE_URL } from '@/configs/path';
 import { usePageUiStore } from '@/hooks';
 import { IMAGE_TYPE, StorageRepoImpl } from '@/stores/repositories/StorageRepo';
-import ImageUploader from 'quill-image-uploader';
+//import ImageUploader from 'quill-image-uploader';
 
-Quill.register('modules/imageUploader', ImageUploader);
+//Quill.register('modules/imageUploader', ImageUploader);
 
 export const Editor: React.FC = observer(() => {
   const isEdit = !!useRouteMatch(PAGE_URL.PostEdit);
