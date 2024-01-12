@@ -26,6 +26,8 @@ const SettingPasswordPage: React.FC = observer(() => {
     auth: { signOut },
   } = useRootStore();
   const { submitDisabled, update } = usePageUiStore<PageUiStore.SettingPassword>();
+  //refactor: react-hook-form problem
+  //addition: <User.PasswordUpdateRequestDto & { updatedPasswordConfirm: string }>
   const {
     control,
     handleSubmit,
@@ -81,6 +83,8 @@ const SettingPasswordPage: React.FC = observer(() => {
           />
           {errors.updatedPassword ? (
             <ErrorMessage
+              //refactor: react-hook-form problem
+              //addition: as string
               dangerouslySetInnerHTML={{ __html: errors.updatedPassword?.message as string }}
             />
           ) : null}

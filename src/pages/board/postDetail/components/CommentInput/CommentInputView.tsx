@@ -29,6 +29,8 @@ export const CommentInputView: React.FC<Props> = observer(({ onSubmit }) => {
     <Form onSubmit={onSubmit} isFocus={isFocus}>
       <InputBox>
         <Textarea
+          //refactor: react-hook-form problem
+          //addtion: (e: any)
           ref={(e: any) => {
             ref(e);
             textareaRef.current = e;

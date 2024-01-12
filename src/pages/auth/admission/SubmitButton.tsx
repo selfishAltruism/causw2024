@@ -20,6 +20,8 @@ export const SubmitButton: React.FC<{ email?: string }> = observer(({ email }) =
   const { replace } = useHistory();
   const { isLoading, isDisabled, createAdmission, setSubmitDisabled } =
     usePageUiStore<PageUiStore.Admission>();
+  //refactor: react-hook-form problem
+  //addition: <FormBody>
   const { handleSubmit, watch } = useFormContext<FormBody>();
 
   const onSubmit = useCallback(
@@ -45,6 +47,8 @@ export const SubmitButton: React.FC<{ email?: string }> = observer(({ email }) =
 
   useEffect(() => {
     const subscription = watch(({ description, attachImage }) =>
+      //refactor: react-hook-form problem
+      //addition: ?
       setSubmitDisabled(!description && !attachImage?.length),
     );
     return () => subscription.unsubscribe();

@@ -16,6 +16,8 @@ export class RootStore {
 export const RootStoreInstance = new RootStore();
 const RootStoreContext = createContext(RootStoreInstance);
 
+//refactor: module type problem (solve react-router-dom problem)
+//addtion: {children: React.ReactNode;}
 export const RootStoreProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => (

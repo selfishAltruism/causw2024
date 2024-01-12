@@ -24,6 +24,8 @@ const SettingProfilePage: React.FC = observer(() => {
     auth: { me, fetch },
   } = useRootStore();
   const { reset, submitDisabled, update } = usePageUiStore<PageUiStore.SettingProfile>();
+  //refactor: react-hook-form problem
+  //addition: <FormBody & { email: string; name: string }>
   const { handleSubmit, control, setValue } = useForm<FormBody & { email: string; name: string }>();
   const onSubmit = async (body: FormBody) => {
     const { success, message } = (await update(body)) as unknown as StoreAPI;

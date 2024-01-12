@@ -2,6 +2,8 @@ import { observer } from 'mobx-react-lite';
 import { useMemo, useCallback, useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import ReactQuill from 'react-quill';
+//refactor: react-quill problem
+//delete
 //import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useRouteMatch } from 'react-router-dom';
@@ -11,8 +13,9 @@ import { EditorWrapper } from '../styled';
 import { PAGE_URL } from '@/configs/path';
 import { usePageUiStore } from '@/hooks';
 import { IMAGE_TYPE, StorageRepoImpl } from '@/stores/repositories/StorageRepo';
+//refactor: react-quill problem
+//delete
 //import ImageUploader from 'quill-image-uploader';
-
 //Quill.register('modules/imageUploader', ImageUploader);
 
 export const Editor: React.FC = observer(() => {
