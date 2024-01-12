@@ -25,9 +25,6 @@
       "./node_modules/@types",
       "./@types"
     ],
-    
-    //addition
-    "noImplicitAny": false
   },
   "include": [
     "src",
